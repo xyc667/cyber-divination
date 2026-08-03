@@ -1,57 +1,147 @@
-# React + TypeScript + Vite
+# 赛博算卦 · Cyber Divination
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 千年易理，一键洞天；现代前端，玄机尽显。  
+> 把奇门遁甲、周易六爻、四柱八字、梅花易数……全部装进浏览器里。
 
-Currently, two official plugins are available:
+**赛博算卦**不是又一个「占卜小玩具」。它是一套把**东方古典预测学**与**现代 Web 工程**硬刚在一起的全栈式前端应用——排盘算法在本地跑，交互动效丝滑如电，知识库与智能问答随时待命。打开页面，就像把整座玄学机房塞进了你的标签页。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 为什么是「赛博」算卦？
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+古人夜观天象、铜钱起卦、沙盘排局；今人打开浏览器、点一下、盘就出来了。
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+本项目用 Vite 的极致冷启动、React 的组件化、TypeScript 的类型铁壁、Tailwind 的视觉体系、Framer Motion 的动态仪式感，把原本需要师傅手把手教的排盘流程，改造成**毫秒级、可复现、可回看**的数字化体验。玄学的神秘感还在，工程的确定性也在——这才叫赛博。
+
+---
+
+## 核心能力一览
+
+| 模块 | 一句话 | 你能做什么 |
+|------|--------|------------|
+| **奇门遁甲** | 帝王之学，天时地利人和一盘尽览 | 在线排盘，洞察格局与用神 |
+| **周易占卜** | 六十四卦，人生剧本的元代码 | 起卦、读象、解辞 |
+| **四柱八字** | 年月日时四柱，命盘即人生底图 | 排盘、大运、流年、神煞解读 |
+| **梅花易数** | 万物皆可起卦，快准狠 | 时间 / 数字 / 文字起卦 |
+| **六爻预测** | 铜钱落定，吉凶立判 | 六爻变化与动爻分析 |
+| **射覆游戏** | 文人雅玩，卜卦猜物 | 边玩边悟易理 |
+| **智能问答** | 国学知识库 + RAG 式检索回答 | 有问必答（在知识范围内） |
+| **知识图谱** | 把知识点连成网 | 可视化探索易学脉络 |
+| **我的命盘** | 个人中心 | 管理命盘与占卜历史 |
+
+每一项都不是「摆个按钮装样子」：背后有独立计算器、数据结构与页面流程，真正能从输入走到解读。
+
+---
+
+## 技术栈：为「玄」而生的现代工程
+
+| 层级 | 选型 | 为什么选它 |
+|------|------|------------|
+| 构建 | **Vite 6** | 冷启动快到像瞬移，HMR 改一行立刻见效 |
+| 框架 | **React 18** | 组件化拆盘面、状态与路由，复杂交互也不慌 |
+| 语言 | **TypeScript** | 天干地支、卦爻结构都有类型约束，少写离谱 bug |
+| 样式 | **Tailwind CSS** | 古风配色体系可快速落地，暗金朱砂一气呵成 |
+| 动效 | **Framer Motion** | 起卦、排盘、过渡都有仪式感，不是干巴巴的静态页 |
+| 状态 | **Zustand** | 轻量却够用，占卜记录与全局状态干净利落 |
+| 路由 | **React Router 7** | 多术数模块分页面，导航清晰 |
+| 图标 | **Lucide React** | 现代图标语言，衬托古典内容不违和 |
+| 质量 | **ESLint + typescript-eslint** | 生产级代码门槛，类型与 Hooks 规则一起守 |
+
+再夸张一点说：这是一套**为东方玄学量身裁剪的前端作战系统**——算得快、看得爽、改得动、扩得开。
+
+---
+
+## 快速开始
+
+### 环境要求
+
+- Node.js 18+（建议 LTS）
+- 包管理器：推荐 **pnpm**（仓库已提供 `pnpm-lock.yaml`）
+
+### 安装与启动
+
+```bash
+# 克隆仓库
+git clone https://github.com/xyc667/cyber-divination.git
+cd cyber-divination
+
+# 安装依赖
+pnpm install
+
+# 启动开发服务器（热更新已就绪）
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+浏览器打开终端提示的本地地址（通常是 `http://localhost:5173`），即可进入赛博算卦主页。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 常用脚本
 
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+pnpm dev       # 开发模式：极速 HMR
+pnpm build     # 类型检查 + 生产构建
+pnpm preview   # 预览构建产物
+pnpm lint      # ESLint 代码检查
+pnpm check     # 仅 TypeScript 类型检查
 ```
+
+---
+
+## 项目结构（精简导览）
+
+```
+src/
+├── pages/           # 各术数页面：奇门 / 周易 / 八字 / 梅花 / 六爻 / 射覆 / 问答 / 知识图谱…
+├── components/      # 布局与通用组件
+├── utils/           # 核心算法：排盘、起卦、RAG 引擎等
+├── services/        # 业务服务层（如八字解读）
+├── store/           # Zustand 全局状态（占卜记录等）
+├── data/            # 卦象、知识库等静态数据
+├── hooks/           # 主题等自定义 Hooks
+└── lib/             # 工具函数
+```
+
+想改算法？去 `utils/`。想加新术数？照现有页面模式扩一条路由即可。
+
+---
+
+## 功能亮点（再吹一波）
+
+1. **本地算法，隐私友好**  
+   排盘与起卦逻辑主要在浏览器侧完成，不必把生辰八字先扔到未知服务器才安心。
+
+2. **多术数一站式**  
+   奇门、周易、八字、梅花、六爻、射覆……从帝王术到文人雅玩，一条导航全覆盖。
+
+3. **智能问答 + 知识图谱**  
+   不只是「算出一个卦」：还能问、能学、能顺着知识网往下挖。
+
+4. **动效与古风 UI**  
+   Framer Motion 加持下的过渡与微动效，配合暗金、朱砂等视觉语言，仪式感拉满。
+
+5. **历史与个人命盘**  
+   占卜可回看，命盘可沉淀，让「算过一次就散」变成「可追溯的数字档案」。
+
+---
+
+## 开发说明
+
+- 路径别名已配置，可用 `@/` 引用 `src` 下模块。
+- 样式主题变量集中在 Tailwind 配置中，改古风色板请优先改配置而非散落写死颜色。
+- 新增术数模块建议遵循：`utils/*Calculator` → `pages/*Page` → `App.tsx` 路由注册。
+
+---
+
+## 免责声明
+
+本项目仅供**学习、研究与娱乐**。易学预测有文化与历史价值，但**不能替代**专业医疗、法律、财务或人生重大决策建议。请理性对待每一次排盘结果。
+
+---
+
+## 许可证与贡献
+
+欢迎 Issue / PR：修算法、补文档、加术数、优化动效，统统欢迎。  
+若本仓库对你有启发，点一颗 Star，也算给「赛博玄学」加一点阳气。
+
+---
+
+**赛博算卦** —— 让古典智慧在现代前端里重新起卦。
